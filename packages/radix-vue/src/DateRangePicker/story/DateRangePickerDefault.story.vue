@@ -21,6 +21,7 @@ import {
   DateRangePickerTrigger,
 } from '../'
 import { Label } from '@/Label'
+import { CalendarDate } from '@internationalized/date'
 </script>
 
 <template>
@@ -34,6 +35,7 @@ import { Label } from '@/Label'
         <DateRangePickerRoot
           id="date-field"
           :is-date-unavailable="date => date.day === 19"
+          :max-value="new CalendarDate(2024, 11, 11)"
         >
           <DateRangePickerField
             v-slot="{ segments }"
